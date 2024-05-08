@@ -5,6 +5,8 @@ using BlazorLogin.Shared;
 
 namespace BlazorLogin.Server.Controllers
 {
+    //Minuto del video 8:49
+
     [Route("api/[controller]")]
     [ApiController]
     public class UsuarioController : ControllerBase

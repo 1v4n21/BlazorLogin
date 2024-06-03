@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorLogin.Server", "BlazorLogin.Server\BlazorLogin.Server.csproj", "{7940658F-3945-460C-841B-B48712DF9851}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorLogin.Server", "BlazorLogin.Server\BlazorLogin.Server.csproj", "{7940658F-3945-460C-841B-B48712DF9851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorLogin.Client", "BlazorLogin.Client\BlazorLogin.Client.csproj", "{9A9983A8-45A7-4E8F-983C-5009E5D58878}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorLogin.Client", "BlazorLogin.Client\BlazorLogin.Client.csproj", "{9A9983A8-45A7-4E8F-983C-5009E5D58878}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorLogin.Shared", "BlazorLogin.Shared\BlazorLogin.Shared.csproj", "{45D02C74-A853-49C5-9F45-892A1DD226A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorLogin.Shared", "BlazorLogin.Shared\BlazorLogin.Shared.csproj", "{45D02C74-A853-49C5-9F45-892A1DD226A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

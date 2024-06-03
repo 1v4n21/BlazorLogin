@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Text;
 using BlazorLogin.Shared;
 
+//24:00 Video Login Blazor
 namespace BlazorLogin.Client.Extensiones
 {
     public static class SesionStorageExtension

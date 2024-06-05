@@ -33,7 +33,7 @@ namespace BlazorLogin.Client.Extensiones
             else
             {
                 claimsPrincipal = _sinInformacion;
-                await _sessionStorage.RemoveItemAsync("sesionUsuario");
+                await _sessionStorage.RemoveItemAsync("c");
             }
 
             NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(claimsPrincipal)));
@@ -41,9 +41,24 @@ namespace BlazorLogin.Client.Extensiones
         }
 
 
-        public override Task<AuthenticationState> GetAuthenticationStateAsync()
+        public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
-            throw new NotImplementedException();
+
+            var sesionUsuario = await _sessionStorage.ObtenerStorage<SesionDTO>("sesionUsuario");
+
+            if(sesionUsuario == null)
+            {
+                return await Task.FromResult(new AuthenticationState(_sinInformacion));
+            }
+
+            var claimPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, sesionUsuario.Nombre),
+                    new Claim(ClaimTypes.Email, sesionUsuario.Correo),
+                    new Claim(ClaimTypes.Role, sesionUsuario.Rol)
+                }, "JwtAuth"));
+
+            return await Task.FromResult(new AuthenticationState(claimPrincipal));
         }
     }
 }

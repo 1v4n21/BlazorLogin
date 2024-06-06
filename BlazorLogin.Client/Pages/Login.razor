@@ -1,4 +1,5 @@
 ﻿@page "/"
+@layout LoginLayout
 
 @inject HttpClient httpClient
 @using BlazorLogin.Client.Extensiones
@@ -43,6 +44,9 @@
         {
             var sesionUsuario = await loginResponse.Content.ReadFromJsonAsync<SesionDTO>();
             var autenticacionExt = (AutenticacionExtension)autenticacionProvider;
+            await autenticacionExt.ActualizarEstadoAutenticacion(sesionUsuario);
+
+            navManager.NavigateTo("/Index");
         }
     }
 }
